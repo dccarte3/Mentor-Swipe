@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="fsForm">
+            <legend>Log In</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <div>
+            <button type="submit">Log In</button>
+        </div>
+    </form>
+    <div>
+        <small>
+            Need an Account? <a href="{% url 'register' %}">Sign Up</a>
+        </small>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'matching/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'matching/icon.ico' %}" type="image/png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Mentor Swipe</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+        <div class='alert'>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    <div class='container'>
+        <h1 class='land-head'>Mentor Swipe</h1>
+        <a href="/register" class='btn'>Sign Up</a>
+        <a class='btn'>Log In</a>
+    </div>
+</body>
+</html>
