@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'matching.apps.MatchingConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'public_chat.apps.PublicChatConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
