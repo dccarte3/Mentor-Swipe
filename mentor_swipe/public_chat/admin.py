@@ -39,4 +39,14 @@ class CachingPaginator(Paginator):
 
 class PublicRoomChatMessageAdmin(admin.ModelAdmin):
     list_filter = ['room', 'user', 'timestamp']
-    list_display = ['room', ' user', 'time']
+    list_display = ['room', ' user', 'timestamp', 'content']
+    search_fields = ['room__title', 'user__username', 'content']
+    readonly_fields = ['id', 'user', 'room', 'timestamp']
+
+    show_full_result_count = False
+    paginator = CachingPaginator
+
+    class Meta:
+        model = PublicRoomChatMessage
+
+admin.site.register(PublicRoomChatMessage, PublicRoomChatMessageAdmin)

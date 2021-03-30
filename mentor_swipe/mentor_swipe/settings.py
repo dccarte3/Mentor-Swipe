@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'matching.apps.MatchingConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
-    'public_chat.apps.PublicChatConfig',
+    'chat.apps.ChatConfig',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,6 +74,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mentor_swipe.wsgi.application'
 
+ASGI_APPLICATION = 'mentor_swipe.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
